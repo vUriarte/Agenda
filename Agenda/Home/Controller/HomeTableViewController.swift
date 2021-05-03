@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SafariServices
 
 class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFetchedResultsControllerDelegate {
     
@@ -36,7 +37,6 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editar" {
             alunoViewController = segue.destination as? AlunoViewController
-            
         }
     }
     
@@ -46,10 +46,14 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         self.navigationItem.searchController = searchController
     }
     
-    func recuperaAluno() {
+    func recuperaAluno(filtro: String = "") {
         let pesquisaAluno: NSFetchRequest<Aluno> = Aluno.fetchRequest()
         let ordenaPorNome = NSSortDescriptor(key: "nome", ascending: true)
         pesquisaAluno.sortDescriptors = [ordenaPorNome]
+        
+        if verificaFiltro(filtro) {
+            pesquisaAluno.predicate = filtraAluno(filtro)
+        }
         
         gerenciadorDeResultados = NSFetchedResultsController(fetchRequest: pesquisaAluno, managedObjectContext: contexto, sectionNameKeyPath: nil, cacheName: nil)
         gerenciadorDeResultados?.delegate = self
@@ -59,6 +63,19 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func filtraAluno(_ filtro: String) -> NSPredicate {
+        
+        return NSPredicate(format: "nome CONTAINS %@", filtro)
+    }
+    
+    func verificaFiltro(_ filtro: String) -> Bool {
+        if filtro.isEmpty {
+            return false
+        }
+        
+        return true
     }
     
     @objc func abrirActionSheet(_ longPress: UILongPressGestureRecognizer) {
@@ -98,6 +115,23 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
                     self.navigationController?.pushViewController(mapa, animated: true)
                     
                     break
+                case .abrirPaginaWeb:
+                    
+                    if let urlDoAluno = alunoSelecionado.site {
+                        
+                        var urlFormatada = urlDoAluno
+                        
+                        if !urlFormatada.hasPrefix("http://"){
+                            urlFormatada = String(format: "http://%@", urlFormatada)
+                        }
+                        
+                        guard let url = URL(string: urlFormatada) else { return }
+                        
+                        let safariViewController = SFSafariViewController(url: url)
+                        self.present(safariViewController, animated: true, completion: nil)
+                    }
+                    
+                    break
                 }
             })
             self.present(menu, animated: true, completion: nil)
@@ -115,6 +149,7 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula-aluno", for: indexPath) as! HomeTableViewCell
+        celula.tag = indexPath.row
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(abrirActionSheet(_:)))
         guard let aluno = gerenciadorDeResultados?.fetchedObjects![indexPath.row] else { return celula }
         
@@ -178,5 +213,26 @@ class HomeTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         } falha: { (error) in
             print(error.localizedDescription)
         }
+    }
+    
+    
+    @IBAction func buttonLocalizacaoGeral(_ sender: UIBarButtonItem) {
+        let mapa = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mapa") as! MapaViewController
+        navigationController?.pushViewController(mapa, animated: true)
+    }
+    
+
+
+    // MARK: - SearchBarDelegate
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let nomeDoAluno = searchBar.text else { return }
+        recuperaAluno(filtro: nomeDoAluno)
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        recuperaAluno()
+        tableView.reloadData()
     }
 }

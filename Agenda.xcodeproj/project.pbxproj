@@ -16,6 +16,8 @@
 		03AA17681FC843B1003CB2B8 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA17671FC843B1003CB2B8 /* HomeTableViewCell.swift */; };
 		03AA176D1FC8515A003CB2B8 /* AlunoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AA176C1FC8515A003CB2B8 /* AlunoViewController.swift */; };
 		5F02EBC1263B32AB0045346E /* CalculaMediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02EBC0263B32AB0045346E /* CalculaMediaAPI.swift */; };
+		5F089CB22640223A00FE1FE2 /* Pino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F089CB12640223A00FE1FE2 /* Pino.swift */; };
+		5F089CB7264024CC00FE1FE2 /* icon_caelum.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F089CB6264024CC00FE1FE2 /* icon_caelum.png */; };
 		5F195C44263C471B0017B763 /* Notificacoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F195C43263C471B0017B763 /* Notificacoes.swift */; };
 		5F195C47263C4EA80017B763 /* AutenticacaoLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F195C46263C4EA80017B763 /* AutenticacaoLocal.swift */; };
 		5F2C27C62639B32D005A9EA5 /* MenuOpcoesAlunos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C27C52639B32D005A9EA5 /* MenuOpcoesAlunos.swift */; };
@@ -37,6 +39,8 @@
 		03AA17671FC843B1003CB2B8 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		03AA176C1FC8515A003CB2B8 /* AlunoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoViewController.swift; sourceTree = "<group>"; };
 		5F02EBC0263B32AB0045346E /* CalculaMediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculaMediaAPI.swift; sourceTree = "<group>"; };
+		5F089CB12640223A00FE1FE2 /* Pino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pino.swift; sourceTree = "<group>"; };
+		5F089CB6264024CC00FE1FE2 /* icon_caelum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_caelum.png; sourceTree = "<group>"; };
 		5F195C43263C471B0017B763 /* Notificacoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificacoes.swift; sourceTree = "<group>"; };
 		5F195C46263C4EA80017B763 /* AutenticacaoLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticacaoLocal.swift; sourceTree = "<group>"; };
 		5F2C27C52639B32D005A9EA5 /* MenuOpcoesAlunos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesAlunos.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 		03AA17411FC84154003CB2B8 = {
 			isa = PBXGroup;
 			children = (
+				5F089CB5264024BC00FE1FE2 /* Assets */,
 				03AA174C1FC84154003CB2B8 /* Agenda */,
 				03AA174B1FC84154003CB2B8 /* Products */,
 			);
@@ -140,9 +145,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5F089CB02640221F00FE1FE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F089CB12640223A00FE1FE2 /* Pino.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F089CB5264024BC00FE1FE2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5F089CB6264024CC00FE1FE2 /* icon_caelum.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		5F3AEF552639F870006304AB /* Mapa */ = {
 			isa = PBXGroup;
 			children = (
+				5F089CB02640221F00FE1FE2 /* Model */,
 				5F3AEF572639F8D9006304AB /* View */,
 				5F3AEF562639F8D2006304AB /* Controller */,
 			);
@@ -237,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AA175B1FC84154003CB2B8 /* LaunchScreen.storyboard in Resources */,
+				5F089CB7264024CC00FE1FE2 /* icon_caelum.png in Resources */,
 				03AA17581FC84154003CB2B8 /* Assets.xcassets in Resources */,
 				03AA17531FC84154003CB2B8 /* Main.storyboard in Resources */,
 			);
@@ -250,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AA176D1FC8515A003CB2B8 /* AlunoViewController.swift in Sources */,
+				5F089CB22640223A00FE1FE2 /* Pino.swift in Sources */,
 				03AA17661FC84353003CB2B8 /* HomeTableViewController.swift in Sources */,
 				03AA17561FC84154003CB2B8 /* Agenda.xcdatamodeld in Sources */,
 				A281001A1FD5C2F700E1BDF1 /* ImagePicker.swift in Sources */,
