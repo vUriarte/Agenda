@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+
 
 class AlunoViewController: UIViewController, ImagePickerFotoSelecionada {
     
@@ -25,12 +25,7 @@ class AlunoViewController: UIViewController, ImagePickerFotoSelecionada {
     @IBOutlet weak var textFieldNota: UITextField!
     
     // MARK: - Atributos
-    
-    var contexto: NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        return appDelegate.persistentContainer.viewContext
-    }
+
     let imagePicker = ImagePicker()
     var aluno: Aluno?
     
@@ -115,7 +110,6 @@ class AlunoViewController: UIViewController, ImagePickerFotoSelecionada {
             self.mostrarMultimidia(opcao)
         }
         present(menu, animated: true, completion: nil)
-    
     }
     
     @IBAction func stepperNota(_ sender: UIStepper) {
@@ -124,23 +118,8 @@ class AlunoViewController: UIViewController, ImagePickerFotoSelecionada {
     
     @IBAction func buttonSalvar(_ sender: UIButton) {
         //let aluno = Aluno(context: contexto)
-        if aluno == nil {
-            aluno = Aluno(context: contexto)
-        }
-        aluno?.nome = textFieldNome.text
-        aluno?.endereco = textFieldEndereco.text
-        aluno?.nota = (textFieldNota.text! as NSString).doubleValue
-        aluno?.site = textFieldSite.text
-        aluno?.telefone = textFieldTelefone.text
-        aluno?.foto = imageAluno.image
-        
-        do {
-            try contexto.save()
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print(error.localizedDescription)
-        }
         let json = montaDicionarioDeParametros()
-        AlunoAPI().salvaAlunosNoServidor(parametros: [json])
+        Repositorio().salvaAluno(aluno: json)
+        navigationController?.popViewController(animated: true)
     }
 }

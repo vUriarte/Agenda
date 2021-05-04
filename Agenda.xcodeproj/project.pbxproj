@@ -23,6 +23,8 @@
 		5F2C27C62639B32D005A9EA5 /* MenuOpcoesAlunos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C27C52639B32D005A9EA5 /* MenuOpcoesAlunos.swift */; };
 		5F2C27C92639B797005A9EA5 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C27C82639B797005A9EA5 /* Mensagem.swift */; };
 		5F3AEF592639F92A006304AB /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AEF582639F92A006304AB /* MapaViewController.swift */; };
+		5F533C832641E74600C3D40F /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F533C822641E74600C3D40F /* Repositorio.swift */; };
+		5F533C862641E86000C3D40F /* AlunoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F533C852641E86000C3D40F /* AlunoDAO.swift */; };
 		5F89EE9B2639E8150034A3C2 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89EE9A2639E8150034A3C2 /* Localizacao.swift */; };
 		5FDE8AA32641BF1400C6C09B /* AlunoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */; };
 		65BDBCF92D873A7E23A6B71F /* Pods_Agenda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F90600CC0C5F799473EC32 /* Pods_Agenda.framework */; };
@@ -49,6 +51,8 @@
 		5F2C27C52639B32D005A9EA5 /* MenuOpcoesAlunos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesAlunos.swift; sourceTree = "<group>"; };
 		5F2C27C82639B797005A9EA5 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
 		5F3AEF582639F92A006304AB /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		5F533C822641E74600C3D40F /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
+		5F533C852641E86000C3D40F /* AlunoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoDAO.swift; sourceTree = "<group>"; };
 		5F89EE9A2639E8150034A3C2 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
 		5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoAPI.swift; sourceTree = "<group>"; };
 		A28100191FD5C2F700E1BDF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */,
+				5F533C852641E86000C3D40F /* AlunoDAO.swift */,
+				5F533C822641E74600C3D40F /* Repositorio.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				03AA176D1FC8515A003CB2B8 /* AlunoViewController.swift in Sources */,
 				5FDE8AA32641BF1400C6C09B /* AlunoAPI.swift in Sources */,
 				5F089CB22640223A00FE1FE2 /* Pino.swift in Sources */,
+				5F533C862641E86000C3D40F /* AlunoDAO.swift in Sources */,
 				03AA17661FC84353003CB2B8 /* HomeTableViewController.swift in Sources */,
 				03AA17561FC84154003CB2B8 /* Agenda.xcdatamodeld in Sources */,
 				A281001A1FD5C2F700E1BDF1 /* ImagePicker.swift in Sources */,
@@ -363,6 +370,7 @@
 				5F2C27C62639B32D005A9EA5 /* MenuOpcoesAlunos.swift in Sources */,
 				5F2C27C92639B797005A9EA5 /* Mensagem.swift in Sources */,
 				5F195C44263C471B0017B763 /* Notificacoes.swift in Sources */,
+				5F533C832641E74600C3D40F /* Repositorio.swift in Sources */,
 				5F3AEF592639F92A006304AB /* MapaViewController.swift in Sources */,
 				03AA174E1FC84154003CB2B8 /* AppDelegate.swift in Sources */,
 				5F89EE9B2639E8150034A3C2 /* Localizacao.swift in Sources */,
