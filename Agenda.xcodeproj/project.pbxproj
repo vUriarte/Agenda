@@ -24,6 +24,7 @@
 		5F2C27C92639B797005A9EA5 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C27C82639B797005A9EA5 /* Mensagem.swift */; };
 		5F3AEF592639F92A006304AB /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AEF582639F92A006304AB /* MapaViewController.swift */; };
 		5F89EE9B2639E8150034A3C2 /* Localizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89EE9A2639E8150034A3C2 /* Localizacao.swift */; };
+		5FDE8AA32641BF1400C6C09B /* AlunoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */; };
 		65BDBCF92D873A7E23A6B71F /* Pods_Agenda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F90600CC0C5F799473EC32 /* Pods_Agenda.framework */; };
 		A281001A1FD5C2F700E1BDF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28100191FD5C2F700E1BDF1 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		5F2C27C82639B797005A9EA5 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
 		5F3AEF582639F92A006304AB /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		5F89EE9A2639E8150034A3C2 /* Localizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizacao.swift; sourceTree = "<group>"; };
+		5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlunoAPI.swift; sourceTree = "<group>"; };
 		A28100191FD5C2F700E1BDF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E289890ADF434EAC87FDF139 /* Pods-Agenda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agenda.release.xcconfig"; path = "Target Support Files/Pods-Agenda/Pods-Agenda.release.xcconfig"; sourceTree = "<group>"; };
 		EF9CBFE3254CBD6A8F9001AE /* Pods-Agenda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agenda.debug.xcconfig"; path = "Target Support Files/Pods-Agenda/Pods-Agenda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		03AA17691FC84A2D003CB2B8 /* Alunos */ = {
 			isa = PBXGroup;
 			children = (
+				5FDE8AA12641BEF100C6C09B /* Model */,
 				03AA176A1FC84A2D003CB2B8 /* Controller */,
 			);
 			path = Alunos;
@@ -201,13 +204,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5FDE8AA12641BEF100C6C09B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FDE8AA22641BF1400C6C09B /* AlunoAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8485B3532B581A93666E0639 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				EF9CBFE3254CBD6A8F9001AE /* Pods-Agenda.debug.xcconfig */,
 				E289890ADF434EAC87FDF139 /* Pods-Agenda.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -343,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AA176D1FC8515A003CB2B8 /* AlunoViewController.swift in Sources */,
+				5FDE8AA32641BF1400C6C09B /* AlunoAPI.swift in Sources */,
 				5F089CB22640223A00FE1FE2 /* Pino.swift in Sources */,
 				03AA17661FC84353003CB2B8 /* HomeTableViewController.swift in Sources */,
 				03AA17561FC84154003CB2B8 /* Agenda.xcdatamodeld in Sources */,
